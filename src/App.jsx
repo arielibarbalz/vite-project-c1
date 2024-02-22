@@ -1,4 +1,5 @@
 import './App.css'
+import Form from './Components/Form'
 import Navbar from './Components/Navbar'
 import Pizza from './Components/Pizza'
 import Shop from './Components/Shop'
@@ -9,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar />
-
+      <Form/>
       {/* <Pizza gusto={pizzas[0]}/>
       <Pizza gusto={pizzas[1]}/>
       <Pizza gusto={pizzas[2]}/> */}
@@ -23,3 +24,13 @@ function App() {
 }
 
 export default App
+
+
+//Temas para el parcial:
+ 
+//Crear un proyecto
+//Componentes
+//Props
+//Map
+//Estados (useState)
+//Eventos y formularios

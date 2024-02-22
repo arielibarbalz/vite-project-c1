@@ -9,16 +9,16 @@ const Card = ({ gusto, cart, setCart }) => {
     }
     
     return (
-    <div>
-        <img src={img} alt="" />
-        <h3>{tipo}</h3>
-        <h4>{precio}</h4>
+        <div>
+            <img src={img} alt="" />
+            <h3>{tipo}</h3>
+            <h4>{precio}</h4>
 
-        <Counter/>
+            <Counter/>
 
-        <button onClick={addCart}>Agregar al carrito</button>
-    </div>
-  )
+            <button onClick={addCart}>Agregar al carrito</button>
+        </div>
+    )
 }
 
 export default Card

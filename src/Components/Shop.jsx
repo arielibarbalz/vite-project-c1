@@ -16,7 +16,10 @@ const Shop = () => {
   return (
     <div>
         <h1>Lista de pizzas</h1>
-        {/* {cart.map((item) => <li>{item.tipo}</li>)} */}
+        <ul>
+          {cart.map((item) => <li>{item.tipo}</li>)}
+        </ul>
+        
         {pizzas.map((pizza) => <Card key={pizza.id} gusto={pizza} cart={cart} setCart={setCart}/>)}
     </div>
   )

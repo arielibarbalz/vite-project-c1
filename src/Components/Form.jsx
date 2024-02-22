@@ -1,0 +1,47 @@
+import React, { useState } from 'react'
+
+const Form = () => {
+    // const [name, setName] = useState('')
+    // const [address, setAddress] = useState('')
+    const [customer, setCustomer] = useState({
+        name: '',
+        address: '',
+    })
+    console.log(customer)
+    const [show, setShow] = useState(false)
+    const [err, setErr] = useState(false)
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        const numRegex = /[0-9]/
+        if(customer.name.length >= 3 && customer.address.includes(' ') && numRegex.test(customer.address)){
+            setShow(true)
+            setErr(false)
+        } else {
+            setErr(true)
+        }
+    }
+
+  return (
+    <div>
+        {show ? null : 
+            <form onSubmit={handleSubmit}>
+                <label >Nombre: </label>
+                <input type="text" onChange={(event) => setCustomer({...customer, name: event.target.value})}/>
+                <label >Dirección</label>
+                <input type="text" onChange={(event) => setCustomer({...customer, address: event.target.value})}/>
+                <button>Enviar</button>
+            </form>
+        }
+        {show ? 
+            <>
+                <h4>Gracias, {customer.name}!</h4>
+                <h4>En 20 minutos llega tu pedido a {customer.address}.</h4>
+            </>
+        : <p>Coloque sus datos para enviar su pedido.</p>}
+        {err ? <p style={{color: 'red'}}>Debe colocar la información correctamente</p> : null}
+    </div>
+  )
+}
+
+export default Form
