@@ -1,15 +1,15 @@
 import Counter from "./Counter"
-
+import CardStyles from '../Styles/Card.module.css'
 const Card = ({ gusto, cart, setCart }) => {
     // console.log(gusto)
-    const {id, img, tipo, precio} = gusto
+    const { img, tipo, precio} = gusto
   
     const addCart = () => {
         setCart([...cart, gusto])
     }
     
     return (
-        <div>
+        <div className={CardStyles.cardContainer}>
             <img src={img} alt="" />
             <h3>{tipo}</h3>
             <h4>{precio}</h4>

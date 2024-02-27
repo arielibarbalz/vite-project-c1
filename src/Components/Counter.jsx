@@ -19,7 +19,7 @@ const Counter = () => {
     }
 
   return (
-    <div>
+    <div className='btn-group'>
         <button onClick={restar}>-</button>
         <h4>{counter}</h4>
         <button onClick={sumar}>+</button>

@@ -1,24 +1,21 @@
+import { useState } from 'react'
 import './App.css'
+import Footer from './Components/Footer'
 import Form from './Components/Form'
 import Navbar from './Components/Navbar'
 import Pizza from './Components/Pizza'
 import Shop from './Components/Shop'
+import Contact from './Components/Contact'
 
 function App() {
-  const pizzas = ['Anchoas', 'Especial', 'Hawaina', 'Anchoas']
-
+  const [contact, setContact] = useState(false)
   return (
     <>
-      <Navbar />
-      <Form/>
-      {/* <Pizza gusto={pizzas[0]}/>
-      <Pizza gusto={pizzas[1]}/>
-      <Pizza gusto={pizzas[2]}/> */}
-
-      {/* {pizzas.map((pizza, indice) => <h4 key={indice}>{pizza}</h4>)} */}
-
+      <Navbar setContact={setContact}/>
+      {contact ? <Contact/> : null}
+      {/* <Form/> */}
       <Shop />
-
+      <Footer/>
     </>
   )
 }
